@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>Congratulations</title>
+   <script src="aframe.min.js"></script>
+    
+
+    <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+    
+  </head>
+  <body>
+    <a-scene>
+      
+
+            <a-entity position="0 2.25 -15" particle-system="preset: dust"></a-entity>
+            <a-entity position="0 2.25 -15" particle-system="preset: snow"></a-entity> 
+     
+      
+     <a-assets>
+      
+       <img id="castle2" src="castle2.jpg" />
+       <img id="lantern1" src="lantern.png" />
+       <img id="lantern2" src="lantern.png" />
+       <img id="lantern3" src="lantern.png" />
+       <img id="lantern4" src="lantern.png" />
+       <img id="princess" src="princess.png" />
+       <img id="one" src="one.jpg" />
+       <img id="round1" src="round1.jpg" />
+	<img id="continue" src="continue.jpg" />
+     </a-assets>
+
+    <a-entity>
+                <a-entity camera look-controls wasd-controls>
+                    <a-entity position="0 -1 -2" scale="0.2 0.2 0.2" geometry="primitive: ring; radiusOuter: 0.15; radiusInner: 0.10;" material="color: #ADD8E6; shader: flat" cursor="maxDistance: 30; fuse: true">
+                        <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                        <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+
+  <a-entity>
+
+   <a-image position="-20 -3 -15" height="15" width="15"  src="#princess"></a-image>
+ 
+   <a-image position="15 5 -15" height="5" width="5"  src="#lantern1"></a-image>
+   <a-image position="0 11 -15" height="5" width="5"  src="#lantern2"></a-image>
+   <a-image position="-15 6 -15" height="5" width="5"  src="#lantern3"></a-image>
+   <a-image position="8 -7 -15" height="5" width="5"  src="#lantern4"></a-image>
+   <a-image position="-1.5 -6 -15" height="2" width="6"  src="#continue" id="conhref"></a-image>
+ </a-entity>
+
+<a-entity>
+<a-animation attribute="position" from="0 2 -6" to="0 2 -8" repeat="indefinite"></a-animation>
+  <a-image position="0 0 -8" height="13" width="16"  src="#one"></a-image> 
+</a-entity>
+     
+    
+          
+            
+     <a-sky src="#castle2" phi-start=120></a-sky>
+     
+
+     
+    </a-scene>
+
+    <script>
+            AFRAME.registerComponent('auto-enter-vr', {
+             init: function () {
+              this.el.sceneEl.enterVR();
+             }
+            });
+            
+            document.querySelector("#conhref").addEventListener('click', function() {
+                window.location.href = "../round2/index.html";
+            });
+      
+        </script>
+
+  </body>
+</html>

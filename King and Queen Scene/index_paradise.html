@@ -1,0 +1,63 @@
+<html>
+   <head>
+        <meta charset="utf-8">
+        <title>Lost Paradise</title>
+        <meta name="description" content="">
+       <script src="aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+       
+    </head>
+  <body>
+    <a-scene auto-enter-vr>
+      <a-entity position="0 2.25 -15" particle-system="preset: dust"></a-entity>
+            <a-entity position="0 2.25 -15" particle-system="preset: snow"></a-entity> 
+     
+      
+     <a-assets>
+      
+       <img id="paradise" src="paradise.jpg" />
+       <img id="lost" src="lost.jpg" />
+       <img id="castle1" src="castle1.jpg" />
+       <img id="couple" src="couple1.png" />
+       <img id="s" src="start.jpg" />
+       
+     </a-assets>
+
+            <a-entity>
+                <a-entity camera look-controls wasd-controls>
+                    <a-entity position="0 1 -2" scale="0.2 0.2 0.2" geometry="primitive: ring; radiusOuter: 0.20; radiusInner: 0.13;" material="color: #ADD8E6; shader: flat" cursor="maxDistance: 30; fuse: true">
+                        <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                        <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+
+   <a-image position="15 5 -15" height="15" width="15"  src="#paradise" id="paradise"></a-image>
+   <a-image position="0 5 -15" height="15" width="15"  src="#lost" id="lost"></a-image>
+   <a-image position="8 -6 -15" height="2" width="6"  src="#s" id="shref"></a-image>
+ </a-entity>
+
+<a-entity>
+<a-animation attribute="position" from="4 4 0" to="5 4 0" repeat="indefinite"></a-animation>
+<a-image position="-20 2 -15" height="15" width="15"  src="#couple"></a-image>
+</a-entity>
+ <a-sky src="#castle1" phi-start=20 ></a-sky>
+     
+    </a-scene>
+ <script>
+            AFRAME.registerComponent('auto-enter-vr', {
+             init: function () {
+              this.el.sceneEl.enterVR();
+             }
+            });
+            
+            document.querySelector("#shref").addEventListener('click', function() {
+                window.location.href = "instruct/index.html";
+            });
+      
+        </script>
+            
+    
+    
+  </body>
+</html>

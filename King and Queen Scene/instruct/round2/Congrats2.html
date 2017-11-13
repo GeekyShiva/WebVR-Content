@@ -1,0 +1,65 @@
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Congratulations</title>
+  
+   <script src="aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity position="0 2.25 -15" particle-system="preset: dust"></a-entity>
+            <a-entity position="0 2.25 -15" particle-system="preset: snow"></a-entity> 
+     
+      
+     <a-assets>
+      <img id="thanks" src="2.jpg" />
+       <img id="castle3" src="castle3.jpg" />
+       <img id="coin1" src="coin.png" />
+       <img id="coin2" src="coin.png" />
+       <img id="coin3" src="coin.png" />
+       <img id="coin4" src="coin.png" />
+       <img id="coin5" src="coin.png" />
+       <img id="found" src="found.jpg" />
+      <img id="paradise" src="paradise.jpg" />
+ 	<img id="treasure" src="treasure.png" />
+      
+     </a-assets>
+
+    <a-entity>
+                <a-entity camera look-controls wasd-controls>
+                    <a-entity position="0 -1 -2" scale="0.2 0.2 0.2" geometry="primitive: ring; radiusOuter: 0.15; radiusInner: 0.10;" material="color: #ADD8E6; shader: flat" cursor="maxDistance: 30; fuse: true">
+                        <a-animation begin="click" easing="ease-in" attribute="scale" fill="backwards" from="0.1 0.1 0.1" to="1 1 1" dur="150"></a-animation>
+                        <a-animation begin="fusing" easing="ease-in" attribute="scale" fill="forwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
+                    </a-entity>
+                </a-entity>
+            </a-entity>
+
+  <a-entity>
+
+ 
+   <a-image position="15 8 -15" height="5" width="5"  src="#coin1"></a-image>
+   <a-image position="0 12 -15" height="5" width="5"  src="#coin2" ></a-image>
+   <a-image position="-10 10 -15" height="5" width="5"  src="#coin3"  ></a-image>
+   <a-image position="8 -7 -15" height="5" width="5"  src="#coin4" ></a-image>
+   <a-image position="15 -2 -15" height="5" width="5"  src="#coin5" ></a-image>
+  <a-image position="-5 -7 -15" height="8" width="10"  src="#treasure"></a-image>
+ <a-image position="-20 -3 -15" height="8" width="10"  src="#found"></a-image>
+ <a-image position="20 -3 -15" height="8" width="10"  src="#paradise"></a-image>
+ </a-entity>
+
+<a-entity>
+<a-animation attribute="position" from="0 2 -6" to="0 2 -7" repeat="indefinite"></a-animation>
+<a-image position="0 1 -5" height="12" width="15"   src="#thanks"></a-image>
+</a-entity>
+     
+    
+          
+            
+     <a-sky src="#castle3"></a-sky>
+     
+    </a-scene>
+
+
+  </body>
+</html>
